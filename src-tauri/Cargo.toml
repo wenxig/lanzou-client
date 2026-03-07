@@ -1,0 +1,66 @@
+[package]
+name = "lanzou-client"
+description = ""
+authors = ["wenxig"]
+license = "AGPL-3.0-only"
+repository = "https://github.com/delta-comic/delta-comic"
+edition = "2024"
+rust-version = "1.94.0"
+version = "0.0.1"
+
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 0
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+strip = true
+debug = false
+incremental = true
+
+[lib]
+name = "lanzou_client_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+serde_json = "1.0.149"
+tauri-plugin-persisted-scope = "2.3.5"
+tauri-plugin-fs = "2.4.5"
+tokio = "1.50.0"
+mime_guess = "2.0.5"
+percent-encoding = "2.3.2"
+log = "0.4.29"
+tauri-runtime-wry = "2.10.0"
+tauri-plugin-shell = "2"
+
+[dependencies.tauri-plugin-log]
+version = "2.8.0"
+features = ["colored"]
+
+[dependencies.tauri-plugin-better-cors-fetch]
+git = "https://github.com/delta-comic/tauri-plugin-better-cors-fetch"
+branch = "main"
+features = ["multipart", "blocking", "native-tls-vendored"]
+
+[dependencies.serde]
+version = "1.0.228"
+features = ["derive"]
+
+[dependencies.tauri]
+version = "2.10.2"
+features = []
+
+[build-dependencies.tauri-build]
+version = "2.5.5"
+features = []
+
+[features]
+default = []
+custom-protocol = ["tauri/custom-protocol"]
