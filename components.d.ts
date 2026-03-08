@@ -12,6 +12,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    LzMarkdown: typeof import('./src/components/base/LzMarkdown/LzMarkdown.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
     NCheckbox: typeof import('naive-ui')['NCheckbox']
@@ -36,4 +37,32 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     UpdateChecker: typeof import('./src/components/UpdateChecker.vue')['default']
   }
+}
+
+// For TSX support
+declare global {
+  const LzMarkdown: typeof import('./src/components/base/LzMarkdown/LzMarkdown.vue')['default']
+  const NButton: typeof import('naive-ui')['NButton']
+  const NCard: typeof import('naive-ui')['NCard']
+  const NCheckbox: typeof import('naive-ui')['NCheckbox']
+  const NDatePicker: typeof import('naive-ui')['NDatePicker']
+  const NDivider: typeof import('naive-ui')['NDivider']
+  const NEmpty: typeof import('naive-ui')['NEmpty']
+  const NFloatButton: typeof import('naive-ui')['NFloatButton']
+  const NH1: typeof import('naive-ui')['NH1']
+  const NIcon: typeof import('naive-ui')['NIcon']
+  const NInput: typeof import('naive-ui')['NInput']
+  const NInputNumber: typeof import('naive-ui')['NInputNumber']
+  const NMenu: typeof import('naive-ui')['NMenu']
+  const NPopconfirm: typeof import('naive-ui')['NPopconfirm']
+  const NPopover: typeof import('naive-ui')['NPopover']
+  const NPopselect: typeof import('naive-ui')['NPopselect']
+  const NResult: typeof import('naive-ui')['NResult']
+  const NScrollbar: typeof import('naive-ui')['NScrollbar']
+  const NSpin: typeof import('naive-ui')['NSpin']
+  const NStatistic: typeof import('naive-ui')['NStatistic']
+  const NText: typeof import('naive-ui')['NText']
+  const RouterLink: typeof import('vue-router')['RouterLink']
+  const RouterView: typeof import('vue-router')['RouterView']
+  const UpdateChecker: typeof import('./src/components/UpdateChecker.vue')['default']
 }

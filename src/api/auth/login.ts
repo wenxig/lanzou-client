@@ -1,10 +1,24 @@
 import { useLocalStorage } from '@vueuse/core'
+import { Mutex } from 'es-toolkit'
 import { isEmpty } from 'es-toolkit/compat'
-import { CORSFetch } from 'tauri-plugin-better-cors-fetch'
+import { type CookieOptions } from 'tauri-plugin-better-cors-fetch'
 
-type CookieOptions = NonNullable<Parameters<typeof CORSFetch.setCookieByParts>[3]>
+import { lanzouApi } from '../axios'
+
 const loginData = useLocalStorage('data.api.login-cookie', new Array<CookieOptions>())
 
 export const checkLogin = () => isEmpty(loginData.value)
 
-export const login = ()=>{}
+const loginLock = new Mutex()
+export const beginLogin = async () => {
+  await loginLock.acquire()
+  try {
+    const dom = await lanzouApi.get<Document>('/account.php', {
+      params: { action: 'login' },
+      responseType: 'document'
+    })
+    dom.data
+  } finally {
+    loginLock.release()
+  }
+}

@@ -4,7 +4,6 @@ import { useThemeVars } from 'naive-ui'
 import { computed } from 'vue'
 
 import App from './App.vue'
-import UpdateChecker from './components/UpdateChecker.vue'
 
 const cssVars = useThemeVars()
 const injectStyle = computed(() => {
@@ -29,5 +28,5 @@ useStyleTag(injectStyle)
   <Suspense>
     <App />
   </Suspense>
-  <UpdateChecker />
+  <!-- <UpdateChecker /> -->
 </template>

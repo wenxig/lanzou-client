@@ -40,14 +40,14 @@ const app = createApp(
       <NConfigProvider
         locale={zhCN}
         abstract
-        theme={isDark ? darkTheme : undefined}
+        theme={isDark.value ? darkTheme : undefined}
         themeOverrides={{
           common: {
             primaryColor: themeColor,
             primaryColorHover: Color(themeColor).lighten(0.2).hex(),
             primaryColorPressed: themeColorDark,
             primaryColorSuppl: themeColorDark,
-            cardColor: isDark ? '#17181a' : undefined
+            cardColor: isDark.value ? '#17181a' : undefined
           }
         }}
       >

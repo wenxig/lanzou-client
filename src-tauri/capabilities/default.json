@@ -5,6 +5,15 @@
   "windows": ["main"],
   "permissions": [
     "core:default",
-    "opener:default"
+    "core:event:default",
+    "core:window:allow-set-fullscreen",
+    "fs:default",
+    "fs:allow-localdata-write-recursive",
+    "fs:allow-data-write-recursive",
+    "fs:allow-appdata-write-recursive",
+    "fs:read-all",
+    "log:default",
+    "cors-fetch:default",
+    "shell:default"
   ]
 }

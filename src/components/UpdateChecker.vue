@@ -6,8 +6,6 @@ import { watch, shallowRef } from 'vue'
 
 import pkg from '../../package.json'
 
-import DcMarkdown from './md/LzMarkdown.vue'
-
 const oct = new Octokit()
 const markdown = computedAsync(async () => {
   // if (import.meta.env.DEV) return []
