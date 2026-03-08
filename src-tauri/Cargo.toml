@@ -30,7 +30,6 @@ name = "lanzou_client_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [dependencies]
-serde_json = "1.0.149"
 tauri-plugin-persisted-scope = "2.3.5"
 tauri-plugin-fs = "2.4.5"
 tokio = "1.50.0"
