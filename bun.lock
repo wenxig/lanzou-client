@@ -1353,7 +1353,7 @@
 
     "tapable": ["tapable@2.3.0", "", {}, "sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg=="],
 
-    "tauri-plugin-better-cors-fetch": ["tauri-plugin-better-cors-fetch@github:delta-comic/tauri-plugin-better-cors-fetch#7ef2551", { "dependencies": { "@tauri-apps/api": "^2.10.1", "es-toolkit": "^1.44.0" } }, "delta-comic-tauri-plugin-better-cors-fetch-7ef2551", "sha512-oWeFql9owvc4kNGEppyHgJZOqvU0w53Y9cc3KU+Pc678euydZk76PMuyeHGQlAkWS8Yog2I+QCWoT1Y+PDOomg=="],
+    "tauri-plugin-better-cors-fetch": ["tauri-plugin-better-cors-fetch@github:delta-comic/tauri-plugin-better-cors-fetch#b909e7c", { "dependencies": { "@tauri-apps/api": "^2.10.1", "es-toolkit": "^1.44.0" } }, "delta-comic-tauri-plugin-better-cors-fetch-b909e7c", "sha512-RcBfDVXX4G+TCHnq8mgGwTOMrHVXHGFbSRv5GLRjazSC2+C2mezgNxdCpK3IU9b6mtUjArb2JZixoNm0NAJ9Rg=="],
 
     "temp-dir": ["temp-dir@3.0.0", "", {}, "sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw=="],
 

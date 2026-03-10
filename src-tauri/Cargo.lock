@@ -4153,8 +4153,8 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-better-cors-fetch"
-version = "6.1.0"
-source = "git+https://github.com/delta-comic/tauri-plugin-better-cors-fetch?branch=main#7ef2551bc84e3238a67930d725c1669ca4bbfb05"
+version = "1.2.1"
+source = "git+https://github.com/delta-comic/tauri-plugin-better-cors-fetch?branch=main#4081957539800628be9fcd5df7d7310eb5b8a3af"
 dependencies = [
  "bytes",
  "cookie_store",

@@ -1,3 +1,3 @@
-import axios from 'axios'
+import { createAxios } from '@/utils/axios'
 
-export const lanzouApi = axios.create({ baseURL: 'https://up.woozooo.com' })
+export const lanzouApi = createAxios(() => 'https://up.woozooo.com')

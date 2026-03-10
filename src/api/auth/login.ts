@@ -1,10 +1,10 @@
 import { useLocalStorage } from '@vueuse/core'
-import { Mutex } from 'es-toolkit'
+import { toFormData } from 'axios'
+import { delay, Mutex } from 'es-toolkit'
 import { isEmpty } from 'es-toolkit/compat'
-import { type CookieOptions } from 'tauri-plugin-better-cors-fetch'
+import { type CookieOptions, CORSFetch } from 'tauri-plugin-better-cors-fetch'
 
 import { lanzouApi } from '../axios'
-import { toFormData } from 'axios'
 
 const loginData = useLocalStorage('data.api.login-cookie', new Array<CookieOptions>())
 
@@ -51,6 +51,14 @@ export const beginLogin = async (el: Element) => {
       _error300: '哎呀，出错了，点击<a href="javascript:__nc.reset()">刷新</a>再来一次',
       _errorNetwork: '网络不给力，请<a href="javascript:__nc.reset()">点击刷新</a>'
     })
+    console.log(
+      CORSFetch,
+      await CORSFetch.getAllCookies()
+    )
+    const cookies = await lanzouApi.get<string>('account.php?action=login')
+    const c = cookies.headers['set-cookie']?.map(v => v.split(';')[0].split('=')) ?? []
+    console.log(cookies, c)
+    await delay(10000)
     return async (username: string, password: string) => {
       const data = {
         action: 'login',
