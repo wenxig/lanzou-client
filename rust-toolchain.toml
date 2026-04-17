@@ -1,2 +1,2 @@
 [toolchain]
-channel = "nightly-2026-04-16"  # 固定某一天的 nightly
+channel = "nightly-2026-04-16" # 固定某一天的 nightly

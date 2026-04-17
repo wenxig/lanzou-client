@@ -24,8 +24,5 @@
     "verbatimModuleSyntax": true
   },
   "files": [],
-  "references": [
-    { "path": "./packages/pc/tsconfig.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./packages/pc/tsconfig.json" }, { "path": "./tsconfig.node.json" }]
 }

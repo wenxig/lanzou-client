@@ -4,11 +4,7 @@
     "composite": true,
     "lib": ["ESNext", "DOM"],
     "paths": { "@/*": ["./src/*"] },
-    "types": [
-      "./components.d.ts",
-      "./typed-router.d.ts",
-      "vite-plus/client"
-    ]
+    "types": ["./components.d.ts", "./typed-router.d.ts", "vite-plus/client"]
   },
   "vueCompilerOptions": {
     "plugins": ["vue-router/volar/sfc-typed-router", "vue-router/volar/sfc-route-blocks"]

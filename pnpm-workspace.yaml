@@ -2,25 +2,29 @@ packages:
   - packages/*
 
 catalog:
-  "@aptabase/tauri": ^0.4.1
-  "@lhlyu/vue-virtual-waterfall": 1.0.8
-  "@octokit/rest": ^22.0.1
-  "@pinia/colada": ^1.1.0
-  "@sentry/vue": ^10.45.0
-  "@tailwindcss/vite": ^4.2.2
-  "@tauri-apps/api": ^2.10.1
-  "@tauri-apps/plugin-fs": ^2.4.5
-  "@tauri-apps/plugin-shell": ^2.3.5
-  "@tauri-apps/plugin-sql": ^2.3.2
-  "@tauri-apps/plugin-store": ^2.4.2
-  "@types/linkify-it": ^5.0.0
-  "@types/markdown-it": ^14.1.2
-  "@types/semver": ^7.7.1
-  "@vant/use": ^1.6.0
-  "@vitejs/plugin-vue": ^6.0.6
-  "@vitejs/plugin-vue-jsx": ^5.1.4
-  "@vueuse/core": ^14.2.1
+  '@aptabase/tauri': ^0.4.1
+  '@lhlyu/vue-virtual-waterfall': 1.0.8
+  '@octokit/rest': ^22.0.1
+  '@pinia/colada': ^1.2.0
+  '@sentry/vue': ^10.45.0
+  '@tailwindcss/vite': ^4.2.2
+  '@tauri-apps/api': ^2.10.1
+  "@tauri-apps/cli": "^2.10.1"
+  '@tauri-apps/plugin-fs': ^2.4.5
+  '@tauri-apps/plugin-shell': ^2.3.5
+  '@tauri-apps/plugin-sql': ^2.3.2
+  '@tauri-apps/plugin-store': ^2.4.2
+  '@types/linkify-it': ^5.0.0
+  '@types/markdown-it': ^14.1.2
+  '@types/semver': ^7.7.1
+  '@vant/use': ^1.6.0
+  '@vitejs/plugin-vue': ^6.0.6
+  '@vitejs/plugin-vue-jsx': ^5.1.5
+  '@vueuse/core': ^14.2.1
+  "axios": "^1.15.0"
   browserslist: ^4.28.2
+  "color": "^5.0.3"
+  "core-js": "^3.49.0"
   dayjs: ^1.11.20
   dompurify: ^3.3.3
   es-toolkit: ^1.45.1
@@ -40,7 +44,7 @@ catalog:
   tailwind-merge: ^3.5.0
   tailwindcss: ^4.2.2
   tailwindcss-safe-area-capacitor: ^0.5.1
-  "tauri-plugin-better-cors-fetch": "github:wenxig/tauri-plugin-better-cors-fetch"
+  'tauri-plugin-better-cors-fetch': 'github:wenxig/tauri-plugin-better-cors-fetch'
   tauri-plugin-sentry-api: ^0.5.0
   tlds: ^1.261.0
   typescript: ^5.9.3
@@ -50,6 +54,7 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@^0.1.16
   vite-plugin-externals: ^0.6.2
   vite-plugin-monkey: ^7.1.9
+  "vite-plugin-vue-devtools": "^8.1.1"
   vite-plus: ^0.1.16
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vue: ^3.5.32
@@ -57,13 +62,13 @@ catalog:
   vue-router: ^5.0.4
 
 overrides:
-  vite: "catalog:"
-  vitest: "catalog:"
+  vite: 'catalog:'
+  vitest: 'catalog:'
 
 peerDependencyRules:
   allowAny:
     - vite
     - vitest
   allowedVersions:
-    vite: "*"
-    vitest: "*"
+    vite: '*'
+    vitest: '*'

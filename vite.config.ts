@@ -1,13 +1,9 @@
 import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
-  staged: {
-    '*': 'vp check --fix',
-    '*.{md,json,toml,rs,js,jsx,ts,tsx,mts,cts,mjs,cjs,vue,html}':
-      'vp exec cspell --no-exit-code --no-must-find-files'
-  },
+  staged: { '*': 'vp check --fix' },
   fmt: {
-    ignorePatterns: ['*.md', 'components.d.ts', 'src-tauri/**/*', 'typed-router.d.ts'],
+    ignorePatterns: ['*.md', 'components.d.ts', 'typed-router.d.ts'],
     endOfLine: 'lf',
     semi: false,
     useTabs: false,
@@ -25,16 +21,17 @@ export default defineConfig({
       preserveWhitespace: false,
       stylesheet: './packages/pc/src/index.css',
       attributes: ['overlayClass', ':class', 'Class'],
-      functions: ['twMerge', 'cn']
+      functions: ['twMerge'],
     },
     bracketSameLine: false,
     bracketSpacing: true,
     embeddedLanguageFormatting: 'auto',
     insertFinalNewline: false,
-    proseWrap: 'preserve',
+    proseWrap: 'always',
     htmlWhitespaceSensitivity: 'css',
     objectWrap: 'collapse',
     quoteProps: 'consistent',
+    trailingComma: 'all',
     sortImports: {
       groups: [
         ['builtin'],
@@ -42,9 +39,9 @@ export default defineConfig({
         ['internal', 'type-internal'],
         ['parent', 'type-parent'],
         ['sibling', 'type-sibling'],
-        ['index', 'type-index']
-      ]
-    }
+        ['index', 'type-index'],
+      ],
+    },
   },
   lint: {
     plugins: ['unicorn', 'typescript', 'oxc', 'vue'],
@@ -53,8 +50,8 @@ export default defineConfig({
       'no-unused-expressions': 'allow',
       'no-useless-escape': 'allow',
       'no-non-null-asserted-optional-chain': 'allow',
-      'no-thenable': 'allow'
-      // 'tsconfig-error': 'allow'
+      'no-thenable': 'allow',
+      'restrict-template-expressions': 'allow',
     },
     settings: {
       'jsx-a11y': { components: {}, attributes: {} },
@@ -67,14 +64,14 @@ export default defineConfig({
         augmentsExtendsReplacesDocs: false,
         implementsReplacesDocs: false,
         exemptDestructuredRootsFromChecks: false,
-        tagNamePreference: {}
+        tagNamePreference: {},
       },
-      'vitest': { typecheck: false }
+      'vitest': { typecheck: true },
     },
     env: { builtin: true },
     globals: {},
     ignorePatterns: ['.vscode', './package.json'],
-    options: { typeAware: false, typeCheck: false }
+    options: { typeAware: true, typeCheck: true },
   },
-  run: { cache: { tasks: true, scripts: true } }
+  run: { cache: { tasks: true, scripts: true } },
 })

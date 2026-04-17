@@ -52,7 +52,20 @@
   max-width: 46rem;
   margin: 0px auto;
   padding: 1.6rem 3.2rem;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, Segoe UI, PingFang SC, Microsoft Yahei, Hiragino Sans GB, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica Neue,
+    Arial,
+    Segoe UI,
+    PingFang SC,
+    Microsoft Yahei,
+    Hiragino Sans GB,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
   font-size: 16px;
   color: #d9d7d1;
   /* spacing */
@@ -73,7 +86,18 @@
 #write > *:last-child {
   margin-top: 0 !important;
 }
-#write p, #write details, #write dl, #write ol, #write ul, #write xmp, #write plaintext, #write listing, #write blockquote, #write table, #write figure, #write hr {
+#write p,
+#write details,
+#write dl,
+#write ol,
+#write ul,
+#write xmp,
+#write plaintext,
+#write listing,
+#write blockquote,
+#write table,
+#write figure,
+#write hr {
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -129,7 +153,10 @@
   margin-left: 0;
   margin-right: 0;
 }
-#write pre, #write xmp, #write plaintext, #write listing {
+#write pre,
+#write xmp,
+#write plaintext,
+#write listing {
   font-family: var(--monospace);
 }
 #write blockquote > :first-child {
@@ -152,7 +179,10 @@
 #write li + li {
   margin-top: 4px;
 }
-#write ul ul, #write ol ul, #write ul ol, #write ol ol {
+#write ul ul,
+#write ol ul,
+#write ul ol,
+#write ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -166,13 +196,22 @@
 #write a img {
   border: none;
 }
-#write b, #write strong {
+#write b,
+#write strong {
   font-weight: bold;
 }
-#write i, #write cite, #write em, #write var, #write address, #write dfn {
+#write i,
+#write cite,
+#write em,
+#write var,
+#write address,
+#write dfn {
   font-style: italic;
 }
-#write code, #write kbd, #write tt, #write samp {
+#write code,
+#write kbd,
+#write tt,
+#write samp {
   font-family: var(--monospace);
 }
 #write mark {
@@ -180,7 +219,8 @@
   padding: 0.2em 0;
   background-color: #116e54;
 }
-#write del, #write s {
+#write del,
+#write s {
   color: #787e8c;
 }
 #write table {
@@ -190,7 +230,8 @@
   border-spacing: 2px;
   font-size: 1em;
 }
-#write th, #write td {
+#write th,
+#write td {
   border-color: #3c4254;
   border-width: 1px;
   border-style: solid;
@@ -216,7 +257,8 @@
 #write .CodeMirror div.CodeMirror-cursor {
   border-color: #d9d7d1;
 }
-#write .md-math-block, #write .md-rawblock {
+#write .md-math-block,
+#write .md-rawblock {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -242,10 +284,16 @@
  * 整体采用飞书云文档的布局规范，可以配合不同的 bear 配色方案。
  * Bear 的配色方案位于 src/themes/bear-palettes 目录。
  */
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
   color: #9faab9;
 }
-#write del, #write s {
+#write del,
+#write s {
   color: #787e8c;
 }
 #write u {
@@ -259,7 +307,12 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
   line-height: 1.4;
   font-weight: 500;
   margin-top: 1em;
@@ -306,14 +359,14 @@
   padding-left: 22px;
   list-style: none;
 }
-#write ul > li:not([class*=task-list-item]) {
+#write ul > li:not([class*='task-list-item']) {
   word-wrap: break-all;
   padding-left: 0px;
 }
-#write ul > li:not([class*=task-list-item]):before {
+#write ul > li:not([class*='task-list-item']):before {
   position: absolute;
   top: 2px;
-  content: "•";
+  content: '•';
   color: #fecb66;
   display: inline-block;
   margin-left: -20px;
@@ -321,15 +374,21 @@
   width: 0px;
   font-size: 0.8em;
   transform: scale(1.25);
-  font-family: PingFangSC-Regular, PingFang SC;
+  font-family:
+    PingFangSC-Regular,
+    PingFang SC;
 }
-#write ul > li:not([class*=task-list-item]) li:not([class*=task-list-item])::before {
-  content: "◦";
+#write ul > li:not([class*='task-list-item']) li:not([class*='task-list-item'])::before {
+  content: '◦';
   transform: scale(1);
   font-weight: 700;
 }
-#write ul > li:not([class*=task-list-item]) li:not([class*=task-list-item]) li:not([class*=task-list-item])::before {
-  content: "▪";
+#write
+  ul
+  > li:not([class*='task-list-item'])
+  li:not([class*='task-list-item'])
+  li:not([class*='task-list-item'])::before {
+  content: '▪';
   transform: scale(1.25);
   font-weight: normal;
 }
@@ -339,13 +398,13 @@
   padding-left: 22px;
   list-style: none;
 }
-#write ol > li:not([class*=task-list-item]) {
+#write ol > li:not([class*='task-list-item']) {
   word-wrap: break-all;
   padding-left: 0px;
   position: relative;
 }
-#write ol > li:not([class*=task-list-item]):before {
-  content: counter(ol_counter) ".";
+#write ol > li:not([class*='task-list-item']):before {
+  content: counter(ol_counter) '.';
   counter-increment: ol_counter;
   color: #fecb66;
   position: absolute;
@@ -359,16 +418,26 @@
   min-width: 18px;
   border-radius: 2px;
   transform: translateX(-2px);
-  font-family: Helvetica Neue, Consolas;
+  font-family:
+    Helvetica Neue,
+    Consolas;
 }
-#write li + li, #write ul ul, #write ol ul, #write ul ol, #write ol ol, #write li ul, #write li ol {
+#write li + li,
+#write ul ul,
+#write ol ul,
+#write ul ol,
+#write ol ol,
+#write li ul,
+#write li ol {
   margin-top: 4px;
 }
 #write .task-list-item {
   padding-left: 0.3rem;
 }
 #write .task-list-item > p {
-  transition: color 0.3s, opacity 0.3s;
+  transition:
+    color 0.3s,
+    opacity 0.3s;
 }
 #write .task-list-item.task-list-done > p {
   color: #787e8c;
@@ -400,7 +469,7 @@
   border-color: #fecb66;
 }
 #write .task-list-item > input[checked]::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 20%;
   left: 50%;
@@ -410,7 +479,7 @@
   background: #fecb66;
 }
 #write .task-list-item > input[checked]::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 46%;
   left: 25%;
@@ -434,7 +503,8 @@
   color: #b0e27d;
 }
 #write .cm-s-inner .cm-qualifier,
-#write .cm-s-inner .cm-string, #write .cm-s-inner .cm-string-2,
+#write .cm-s-inner .cm-string,
+#write .cm-s-inner .cm-string-2,
 #write .cm-s-inner .cm-builtin {
   color: #76d0ff;
 }
@@ -450,8 +520,9 @@
 }
 #write .cm-s-inner .cm-def,
 #write .cm-s-inner .cm-variable,
-#write .cm-s-inner .cm-variable-2, #write .cm-s-inner .cm-variable-3 {
-  color: #0E73A2;
+#write .cm-s-inner .cm-variable-2,
+#write .cm-s-inner .cm-variable-3 {
+  color: #0e73a2;
 }
 #write .cm-s-inner .cm-type {
   color: #04202d;

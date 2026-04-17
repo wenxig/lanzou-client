@@ -1,12 +1,6 @@
-import { useLocalStorage } from '@vueuse/core'
-import { isEmpty } from 'es-toolkit/compat'
-import { type CookieOptions, CORSFetch } from 'tauri-plugin-better-cors-fetch'
+import { CORSFetch } from 'tauri-plugin-better-cors-fetch'
 
 import { lanzouApi } from '../api'
-
-const loginData = useLocalStorage('data.api.login-cookie', new Array<CookieOptions>())
-
-export const checkLogin = () => isEmpty(loginData.value)
 
 export const login = async (username: string, password: string) => {
   await CORSFetch.clearCookie()
@@ -20,6 +14,7 @@ export const login = async (username: string, password: string) => {
       task: 'login',
       setToken: '',
       setSig: '',
+      setScene: '',
       setSessionId: '',
       formhash: '330f23a8',
       username,
@@ -32,5 +27,11 @@ export const login = async (username: string, password: string) => {
 
   console.log('To', cookies, '->', await CORSFetch.getAllCookies())
   const body = response.data
-  if (!body.includes('登录成功，欢迎您回来')) throw new Error()
+  if (body.includes('登录成功，欢迎您回来')) return
+  const dom = new DOMParser().parseFromString(body, 'text/html')
+  const msg =
+    dom.querySelector<HTMLDivElement>('.info_b2')?.innerText.replace(/注意.+/, '') || '未知原因'
+  throw new Error(msg)
 }
+
+export const checkLogin = () => CORSFetch.getAllCookies().then(v => v.some(v => v.name == 'uag'))

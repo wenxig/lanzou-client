@@ -3,7 +3,9 @@ antd
 apksigner
 aptabase
 Aspera
+bakdownload
 bili
+Booleanic
 Booter
 booters
 cdylib
@@ -11,6 +13,7 @@ codegen
 Favourite
 favselect
 Gmailerrorred
+Hywh
 kysely
 lanzou
 Levelboard

@@ -1,0 +1,45 @@
+{
+  "name": "sdk",
+  "version": "1.0.2",
+  "homepage": "https://github.com/delta-comic/jmcomic-sdk",
+  "license": "MIT",
+  "author": {
+    "name": "wenxig",
+    "email": "wenxinguo12@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delta-comic/jmcomic-sdk.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack && pnpm pack --out ./dist/pack.tgz"
+  },
+  "devDependencies": {
+    "es-toolkit": "catalog:",
+    "tauri-plugin-better-cors-fetch": "catalog:",
+    "axios": "catalog:"
+  },
+  "dist": {
+    "tarball": "./dist/pack.tgz"
+  },
+  "readme": "./README.md",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

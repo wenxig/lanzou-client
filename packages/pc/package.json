@@ -15,26 +15,31 @@
   },
   "dependencies": {
     "@octokit/rest": "catalog:",
+    "@pinia/colada": "catalog:",
+    "@tauri-apps/api": "catalog:",
     "@tauri-apps/plugin-shell": "catalog:",
     "@vueuse/core": "catalog:",
-    "axios": "^1.15.0",
-    "color": "^5.0.3",
+    "axios": "catalog:",
+    "color": "catalog:",
+    "core-js": "catalog:",
     "es-toolkit": "catalog:",
     "markdown-it": "catalog:",
     "naive-ui": "catalog:",
     "pinia": "catalog:",
+    "tailwindcss": "catalog:",
     "tauri-plugin-better-cors-fetch": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
-  "readme": "../../README.md",
   "devDependencies": {
     "@tailwindcss/vite": "catalog:",
+    "@tauri-apps/cli": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
     "browserslist": "catalog:",
     "lightningcss": "catalog:",
-    "tailwindcss": "catalog:",
     "unplugin-vue-components": "catalog:",
-    "vite-plugin-vue-devtools": "^8.1.1"
-  }
+    "vite-plugin-vue-devtools": "catalog:"
+  },
+  "readme": "../../README.md"
 }
