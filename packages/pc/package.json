@@ -1,0 +1,40 @@
+{
+  "name": "pc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"Use (build:app) instead.\"",
+    "build:app": "export TRUE_BUILD_MAIN_APP=\"true\" && tauri android build",
+    "build:debug": "tauri android build --debug",
+    "build:local": "tauri build --debug",
+    "build:web": "vp build",
+    "dev": "tauri dev",
+    "dev:web": "vp dev",
+    "publish": "echo \"No need to publish to npm.\"",
+    "tauri": "vp exec tauri"
+  },
+  "dependencies": {
+    "@octokit/rest": "catalog:",
+    "@tauri-apps/plugin-shell": "catalog:",
+    "@vueuse/core": "catalog:",
+    "axios": "^1.15.0",
+    "color": "^5.0.3",
+    "es-toolkit": "catalog:",
+    "markdown-it": "catalog:",
+    "naive-ui": "catalog:",
+    "pinia": "catalog:",
+    "tauri-plugin-better-cors-fetch": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "readme": "../../README.md",
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "browserslist": "catalog:",
+    "lightningcss": "catalog:",
+    "tailwindcss": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite-plugin-vue-devtools": "^8.1.1"
+  }
+}

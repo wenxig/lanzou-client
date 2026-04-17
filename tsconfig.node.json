@@ -1,24 +1,31 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
-    "skipLibCheck": true,
+    "target": "ESNext",
     "module": "nodenext",
+    "skipLibCheck": true,
+    /* Bundler mode */
     "moduleResolution": "nodenext",
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "noImplicitReturns": false,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitThis": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": [
-    "vite.config.mts",
-    ".releaserc.mjs",
-    "commitlint.config.ts",
-    "script/*"
+  "files": [
+    "./commitlint.config.ts",
+    "./.releaserc.mjs",
+    "./script/set-version.mts",
+    "./script/update-version.mts",
+    "./vite.config.ts"
+  ],
+  "references": [
+    { "path": "./packages/app/tsconfig.node.json" },
+    { "path": "./packages/core/tsconfig.node.json" },
+    { "path": "./packages/db/tsconfig.node.json" },
+    { "path": "./packages/model/tsconfig.node.json" },
+    { "path": "./packages/plugin/tsconfig.node.json" },
+    { "path": "./packages/request/tsconfig.node.json" },
+    { "path": "./packages/ui/tsconfig.node.json" },
+    { "path": "./packages/utils/tsconfig.node.json" },
+    { "path": "./packages/vite/tsconfig.node.json" }
   ]
 }
