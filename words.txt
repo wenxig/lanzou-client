@@ -10,8 +10,11 @@ Booter
 booters
 cdylib
 codegen
+Colada
+doupload
 Favourite
 favselect
+formhash
 Gmailerrorred
 Hywh
 kysely
@@ -20,6 +23,7 @@ Levelboard
 lightningcss
 minidump
 msvc
+mydisk
 nvim
 oxfmt
 oxfmtrc
@@ -55,3 +59,4 @@ webp
 wenxig
 woozooo
 xgbuugti
+ylogin

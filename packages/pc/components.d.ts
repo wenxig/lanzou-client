@@ -11,8 +11,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    FileFooter: typeof import('./src/components/file/FileFooter.vue')['default']
     FileIcon: typeof import('./src/components/file/FileIcon.vue')['default']
     FileList: typeof import('./src/components/file/FileList.vue')['default']
+    FileRow: typeof import('./src/components/file/FileRow.vue')['default']
+    FileSider: typeof import('./src/components/file/FileSider.vue')['default']
     Frame: typeof import('./src/components/Frame.vue')['default']
     LzMarkdown: typeof import('./src/components/base/LzMarkdown/LzMarkdown.vue')['default']
     NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']

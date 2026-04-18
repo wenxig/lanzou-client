@@ -1,5 +1,2 @@
-import { defineStore } from 'pinia'
-
-export const useAppStore = defineStore('app', () => {
-  return {}
-})
+import { Lanzou } from 'sdk'
+export const sdk = await Lanzou.create()

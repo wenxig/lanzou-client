@@ -1,18 +1,10 @@
-import axios from 'axios'
-
-export const lanzouApi = axios.create({
-  baseURL: 'https://pc.woozooo.com',
-  timeout: 7000,
-  adapter: ['fetch'],
-})
-
 export enum CloudRole {
   root = '$ROOT',
   bin = '$BIN',
   other = '$OTHER',
 }
 export enum PathType {
-  Dir = 'folder',
+  dir = 'folder',
   file = 'file',
 }
 
@@ -27,12 +19,12 @@ export const rootPathBlock: PathBlock = {
   lanzouId: -1,
   name: '你的网盘',
   role: CloudRole.root,
-  type: PathType.Dir,
+  type: PathType.dir,
 }
 export const binPathBlock: PathBlock = {
   name: '回收站',
   role: CloudRole.bin,
-  type: PathType.Dir,
+  type: PathType.dir,
   lanzouId: -2,
 }
 

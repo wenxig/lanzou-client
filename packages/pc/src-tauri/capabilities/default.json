@@ -18,7 +18,7 @@
     "fs:allow-appdata-write-recursive",
     "fs:read-all",
     "log:default",
-    "cors-fetch:default",
+    "better-cors-fetch:default",
     "shell:default"
   ]
 }

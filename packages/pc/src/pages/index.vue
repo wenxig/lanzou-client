@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { checkLogin } from '@/api/auth/login'
+import { sdk } from '@/stores/app'
 
 definePage({
-  redirect: (await checkLogin()) ? '/main' : '/auth'
+  redirect: sdk.auth.uid ? '/main' : '/auth',
 })
 </script>
 

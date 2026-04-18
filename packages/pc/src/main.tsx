@@ -1,14 +1,7 @@
 import 'core-js'
-import { CORSFetch } from 'tauri-plugin-better-cors-fetch'
-CORSFetch.init({ request: { danger: { acceptInvalidCerts: true, acceptInvalidHostnames: true } } })
 
-import axios from 'axios'
-
-axios.defaults.timeout = 7000
-axios.defaults.adapter = ['fetch']
-
-import '@/index.css'
 import { useDark, usePreferredDark } from '@vueuse/core'
+import Color from 'color'
 import {
   NConfigProvider,
   NMessageProvider,
@@ -19,14 +12,22 @@ import {
   NGlobalStyle
 } from 'naive-ui'
 import { createPinia } from 'pinia'
+
+import '@/index.css'
+import { CORSFetch } from 'tauri-plugin-better-cors-fetch'
 import { createApp, defineComponent, watch } from 'vue'
+import { DataLoaderPlugin } from 'vue-router/experimental'
 
 import AppSetup from './AppSetup.vue'
 import { router } from './router'
+import { PiniaColada } from '@pinia/colada'
+console.log(router,123)
+await CORSFetch.init({
+  request: { danger: { acceptInvalidCerts: true, acceptInvalidHostnames: true } },
+})
+console.log(456)
 
 document.addEventListener('contextmenu', e => e.preventDefault())
-
-import Color from 'color'
 const app = createApp(
   defineComponent(() => {
     const isDark = usePreferredDark()
@@ -47,8 +48,8 @@ const app = createApp(
             primaryColorHover: Color(themeColor).lighten(0.2).hex(),
             primaryColorPressed: themeColorDark,
             primaryColorSuppl: themeColorDark,
-            cardColor: isDark.value ? '#17181a' : undefined
-          }
+            cardColor: isDark.value ? '#17181a' : undefined,
+          },
         }}
       >
         <NGlobalStyle />
@@ -61,13 +62,16 @@ const app = createApp(
         </NLoadingBarProvider>
       </NConfigProvider>
     )
-  })
+  }),
 )
+
+app.use(DataLoaderPlugin, { router })
+app.use(router)
 
 const pinia = createPinia()
 app.use(pinia)
 
-app.use(router)
+app.use(PiniaColada)
 
 const meta = document.createElement('meta')
 meta.name = 'naive-ui-style'

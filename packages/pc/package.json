@@ -26,6 +26,7 @@
     "markdown-it": "catalog:",
     "naive-ui": "catalog:",
     "pinia": "catalog:",
+    "sdk": "workspace:",
     "tailwindcss": "catalog:",
     "tauri-plugin-better-cors-fetch": "catalog:",
     "vue": "catalog:",

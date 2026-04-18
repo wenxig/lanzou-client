@@ -1,25 +1,48 @@
-import { CORSFetch } from 'tauri-plugin-better-cors-fetch'
 import type { Lanzou, LoginData } from '..'
-import { jsonToFormData } from '../helpers'
 
 export class Auth {
   constructor(protected sdk: Lanzou) {}
   public uid?: number
 
-  public async login(data: LoginData, signal?: AbortSignal) {
-    const ky = this.sdk.requester.create()
-    const result = ky.post<UserMe>(this.sdk.config.apiPath.auth_login, {
-      body: jsonToFormData(data),
-      signal,
-    })
-    const user = await result.json()
+  public async login({ password, username }: LoginData, signal?: AbortSignal) {
+    const axios = this.sdk.requester.reference()
+    await this.logout()
 
-    return (this.user = { user, data })
+    // 初始化cookie
+    await axios.get('account.php', { params: { action: 'login', ref: '/mydisk.php' }, signal })
+
+    const response = await axios.postForm<string>(
+      'account.php',
+      {
+        action: 'login',
+        task: 'login',
+        setToken: '',
+        setSig: '',
+        setScene: '',
+        setSessionId: '',
+        formhash: '330f23a8',
+        username,
+        password,
+        ref: '/mydisk.php',
+      },
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, responseType: 'text' },
+    )
+    const body = response.data
+    if (body.includes('登录成功，欢迎您回来')) {
+      const uid = Number(
+        (await this.sdk.requester.cors.getAllCookies()).find(v => v.name == 'ylogin'),
+      )
+      if (uid > 1) return
+    }
+    const dom = new DOMParser().parseFromString(body, 'text/html')
+    const msg =
+      dom.querySelector<HTMLDivElement>('.info_b2')?.innerText.replace(/注意.+/, '') || '未知原因'
+    throw new Error(msg)
   }
 
-  public async logout(signal?: AbortSignal) {
+  public async logout() {
     if (!this.uid) return
-    await CORSFetch.clearCookie()
-    this.user = undefined
+    await this.sdk.requester.cors.clearCookie()
+    this.uid = undefined
   }
 }

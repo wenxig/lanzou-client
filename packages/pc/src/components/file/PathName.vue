@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type PathBlock } from '@/utils/fileSymbol'
+import { type PathBlock } from 'sdk'
 
 const $props = defineProps<{
   path: PathBlock
@@ -7,5 +7,5 @@ const $props = defineProps<{
 </script>
 
 <template>
-  <span class="text-(--nui-placeholder-color) text-xs">{{ path.name }}</span>
+  <span class="text-xs text-(--nui-placeholder-color)">{{ path.name }}</span>
 </template>

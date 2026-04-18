@@ -1,12 +1,16 @@
 import { Auth } from './modules/auth'
-import { Config } from './modules/config'
+import { Fs } from './modules/fs'
 import { Requester } from './modules/requester'
 
 export * from './model/auth'
 export * from './model/utils'
+export * from './model/fs'
 
 export class Lanzou {
-  public config = new Config(this)
-  public requester = new Requester(this)
+  public static async create() {
+    return new this(await Requester.create())
+  }
+  private constructor(public requester: Requester) {}
   public auth = new Auth(this)
+  public fs = new Fs(this)
 }

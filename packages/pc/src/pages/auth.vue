@@ -4,27 +4,27 @@ import { useMessage, type FormRules } from 'naive-ui'
 import { reactive, useTemplateRef } from 'vue'
 import { useRouter } from 'vue-router'
 
-import { login } from '@/api/auth/login'
+import { sdk } from '@/stores/app'
 import { createLoadingMessage } from '@/utils/loading'
 
 const $router = useRouter()
 
 const formValue = reactive({
   username: '',
-  password: ''
+  password: '',
 })
 
 const rules = {
   username: {
     required: true,
     message: '请输入账号',
-    trigger: ['input', 'blur']
+    trigger: ['input', 'blur'],
   },
   password: {
     required: true,
     message: '请输入密码',
-    trigger: ['input', 'blur']
-  }
+    trigger: ['input', 'blur'],
+  },
 } satisfies FormRules
 
 const message = useMessage()
@@ -39,11 +39,11 @@ const handleValidateClick = (e: MouseEvent) => {
       return
     }
     await createLoadingMessage('132', message).bind(
-      login(formValue.username, formValue.password).catch(err => {
+      sdk.auth.login(formValue).catch(err => {
         if (!isError(err)) throw err
         message.error(err.message.replaceAll('\n', '\n'))
         throw err
-      })
+      }),
     )
     $router.replace('/')
   })
